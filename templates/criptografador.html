@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>César — O Criptografador de Mensagens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <img src="{{ url_for('static', filename='image/juliocesar.png') }}" alt="Júlio César" class="cesar-img">
+            <div class="title-group">
+                <h1>César</h1>
+                <p class="subtitle">O Criptografador de Mensagens</p>
+            </div>
+        </header>
+
+        <main class="card">
+            <form id="criptografiaForm" class="form">
+                <div class="form-group">
+                    <label for="mensagem">Digite sua mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="4"
+                        placeholder="Ex: A rápida raposa marrom salta sobre o cão preguiçoso..." required></textarea>
+                </div>
+
+                <div class="botoes">
+                    <button type="button" id="btnCriptografar" class="btn">
+                        <span>Criptografar</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                    </button>
+
+                    <button type="button" id="btnDescriptografar" class="btn btn-secundario">
+                        <span>Descriptografar</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22v-4M12 6V2M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+
+            <div id="resultado" class="resultado" aria-live="polite"></div>
+        </main>
+
+        <footer class="footer">
+            <p>Baseado na Cifra de César · Júlio César (100 a.C. – 44 a.C.)</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/cifra_cesar.js') }}"></script>
+</body>
+
+</html>
